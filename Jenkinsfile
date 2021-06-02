@@ -3,14 +3,29 @@ pipeline {
     stages {
         stage('Deploy/ Build App') {
             steps {
-                sh 'pwd'
-                sh 'ls -lart'
+                sh '''
+                echo 'Application deployed successfully!'
+                '''
             }
         }
         stage('Frontend test') {
             steps {
-                sh 'pwd'
-                sh 'ls -lart'
+                sh '''
+                cd frontendtest/
+                run npm install && npm run cypress:run
+                echo 'publish front end test results'
+                pwd
+                ls -lart
+                '''
+                publishHTML([
+                    allowMissing: false, 
+                    alwaysLinkToLastBuild: false, 
+                    keepAll: false, 
+                    reportDir: 'frontendtest/mochawesome-report', 
+                    reportFiles: 'mochawesome.html', 
+                    reportName: 'Frontend report', 
+                    reportTitles: ''
+                    ])
             }
         }
         stage('Backend test') {
