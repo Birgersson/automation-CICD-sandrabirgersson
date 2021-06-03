@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2021-04-23T14:28:16.077Z",
-    "end": "2021-04-23T14:28:42.640Z",
-    "duration": 26563,
+    "start": "2021-06-03T19:12:15.621Z",
+    "end": "2021-06-03T19:12:35.923Z",
+    "duration": 20302,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "9abe5e56-74ec-408c-9b37-5b476f75dbb8",
+      "uuid": "af193110-c2e9-49c2-8ab5-8dcb97bb77e7",
       "title": "",
       "fullFile": "cypress/integration/vrt.spec.js",
       "file": "cypress/integration/vrt.spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "14410e68-9895-417c-982b-389a2d6d24fd",
+          "uuid": "e0b2dd7b-534d-4ad6-aae1-72f303bc9768",
           "title": "Testsuite for navigation",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Navigate the site taking snapshots",
               "fullTitle": "Testsuite for navigation Navigate the site taking snapshots",
               "timedOut": null,
-              "duration": 15670,
+              "duration": 14579,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.get('.btn').contains('Login');\ncy.percySnapshot('indexPage-Snapshot'); //1 index page\nindexFuncs.validLogin(cy, targets.user1, targets.pw1);\noverviewFuncs.checkTesterHotelOverviewPage(cy); //overviewpage\ncy.contains('Reservations');\ncy.percySnapshot('OverviewPage-Snapshot'); //2 oevrview page\noverviewFuncs.navigateToClientsPage(cy); //clientspage\nclientsFunc.checkClientsPage(cy);\ncy.get(':nth-child(1) > .icon');\ncy.get('h2 > .btn').click();\ncy.get('#app > :nth-child(2)');\ncy.percySnapshot('NewClientsPage-Snapshot'); //3 new client page\ncy.get('[href=\"/clients\"]').click();\nclientsFunc.navigateBack(cy);\noverviewFuncs.checkTesterHotelOverviewPage(cy);\noverviewFuncs.navigateToBillsPage(cy);\nbillsFuncs.checkBillsPage(cy);\ncy.get('h2 > .btn').click();\ncy.get('#app > :nth-child(2)');\ncy.percySnapshot('NewBillsPage-Snapshot'); //4 new bill page\ncy.get('[href=\"/bills\"]').click();\nbillsFuncs.checkBillsPage(cy);\nbillsFuncs.navigateBack(cy);\noverviewFuncs.checkTesterHotelOverviewPage(cy);\noverviewFuncs.navigateToRoomsPage(cy);\nroomsFuncs.checkRoomsPage(cy);\ncy.get('h2 > .btn').click();\ncy.get('#app > :nth-child(2)');\ncy.percySnapshot('NewRoomPage-Snapshot'); //5 new room page\ncy.get('[href=\"/rooms\"]').click();\nroomsFuncs.checkRoomsPage(cy);\ncy.get(':nth-child(3) > .btn').click();\noverviewFuncs.checkTesterHotelOverviewPage(cy);",
               "err": {},
-              "uuid": "43596b0e-0593-42b5-9898-75b57f391195",
-              "parentUUID": "14410e68-9895-417c-982b-389a2d6d24fd",
+              "uuid": "a4efacc4-bd4a-4546-8bcd-fef087d542f6",
+              "parentUUID": "e0b2dd7b-534d-4ad6-aae1-72f303bc9768",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "43596b0e-0593-42b5-9898-75b57f391195"
+            "a4efacc4-bd4a-4546-8bcd-fef087d542f6"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 15670,
+          "duration": 14579,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
