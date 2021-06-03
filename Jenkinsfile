@@ -54,6 +54,8 @@ pipeline {
             steps {
                 sh '''
                     cd performance-tests/
+                    pwd
+                    ls -lart
                     rm test1.csv -Rf
                     rm html-reports/ -Rf
                     jmeter -n -t login-logout.jmx -l test1.csv -e -o html-reports/
@@ -62,7 +64,7 @@ pipeline {
                     allowMissing: false, 
                     alwaysLinkToLastBuild: false, 
                     keepAll: false, 
-                    reportDir: 'performace-tests/html-reports', 
+                    reportDir: 'performance-tests/html-reports', 
                     reportFiles: 'index.html', 
                     reportName: 'Jmeter dashboard (performance)', 
                     reportTitles: ''
