@@ -17,7 +17,7 @@ describe('Testsuite for navigation',function(){
         overviewFuncs.logOut(cy)
        indexFuncs.checkIndexPage(cy)
     })  
-        it('Navigate the site taking snapshots', function(){
+        it('Test - Navigate the site taking snapshots', function(){
             cy.get('.btn').contains('Login')
             cy.percySnapshot('indexPage-Snapshot') //1 index page
             
