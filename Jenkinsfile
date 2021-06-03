@@ -12,7 +12,7 @@ pipeline {
             steps {
                 sh '''
                 cd frontendtest/
-                run npm install && npm run cypress:run
+                npm install && npm run cypress:run
                 echo 'publish front end test results'
                 pwd
                 ls -lart
@@ -33,7 +33,7 @@ pipeline {
             steps {
                 sh '''
                 cd backend-test/
-                run npm install && npm run cypress:run
+                npm install && npm run cypress:run
                 echo 'publish back end test results'
                 pwd
                 ls -lart
