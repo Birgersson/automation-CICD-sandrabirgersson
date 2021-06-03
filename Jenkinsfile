@@ -8,6 +8,30 @@ pipeline {
                 '''
             }
         }
+
+               stage('Backend test') {
+            steps {
+                sh '''
+                cd backend-test/
+                npm install && npm run cypress:run
+                echo 'publish back end test results'
+                pwd
+                ls -lart
+                '''
+                    publishHTML([
+                    allowMissing: false, 
+                    alwaysLinkToLastBuild: false, 
+                    keepAll: false, 
+                    reportDir: 'backend-test/cypress/report/mochawesome-report', 
+                    reportFiles: 'mochawesome.html', 
+                    reportName: 'Backend report', 
+                    reportTitles: ''
+                    ])
+            }
+        }
+
+
+
         stage('Frontend test') {
             steps {
                 sh '''
@@ -29,26 +53,7 @@ pipeline {
                     ])
             }
         }
-               stage('Backend test') {
-            steps {
-                sh '''
-                cd backend-test/
-                npm install && npm run cypress:run
-                echo 'publish back end test results'
-                pwd
-                ls -lart
-                '''
-                    publishHTML([
-                    allowMissing: false, 
-                    alwaysLinkToLastBuild: false, 
-                    keepAll: false, 
-                    reportDir: 'backend-test/cypress/report/mochawesome-report', 
-                    reportFiles: 'mochawesome.html', 
-                    reportName: 'Backend report', 
-                    reportTitles: ''
-                    ])
-            }
-        }
+
     
         stage('Perf test') {
             steps {
