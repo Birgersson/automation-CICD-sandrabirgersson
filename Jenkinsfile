@@ -17,6 +17,7 @@ pipeline {
                 pwd
                 ls -lart
                 '''
+                archiveArtifacts allowEmptyArchive: true, artifacts: 'frontendtest/cypress/videos/**'
                 publishHTML([
                     allowMissing: false, 
                     alwaysLinkToLastBuild: false, 
