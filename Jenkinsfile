@@ -52,8 +52,21 @@ pipeline {
     
         stage('Perf test') {
             steps {
-                sh 'pwd'
-                sh 'ls -lart'
+                sh '''
+                    cd performance-tests/
+                    rm test1.csv -Rf
+                    rm html-reports/ -Rf
+                    jmeter -n -t login-logout.jmx -l test1.csv -e -o html-reports/
+                '''
+                publishHTML([
+                    allowMissing: false, 
+                    alwaysLinkToLastBuild: false, 
+                    keepAll: false, 
+                    reportDir: 'performace-tests/html-reports', 
+                    reportFiles: 'index.html', 
+                    reportName: 'Jmeter dashboard (performance)', 
+                    reportTitles: ''
+                    ])
             }
         }
     }
