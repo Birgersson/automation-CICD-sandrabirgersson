@@ -63,7 +63,7 @@ pipeline {
                     ls -lart
                     rm test1.csv -Rf
                     rm html-reports/ -Rf
-                    jmeter2 -n -t login-logout.jmx -l test1.csv -e -o html-reports/
+                    jmeter -n -t login-logout.jmx -l test1.csv -e -o html-reports/
                 '''
                 publishHTML([
                     allowMissing: false, 
