@@ -8,7 +8,7 @@
     "cypress:run": "cypress run --spec cypress/integration/client-specs.js --reporter mochawesome",
     "test:merge": "mochawesome-merge cypress/report/mochawesome-report/*.json > cypress/report/output.json",
     "test:merge:report": "marge cypress/report/output.json --reportDir cypress/report/ --inline",
-    "generate:report": "rm cypress/report/ -Rf && npm run test:run && npm run test:merge && npm run test:merge:report"
+    "generate:report": "rm cypress/report/ -Rf && npm run cypress:run && npm run test:merge && npm run test:merge:report"
   },
   "keywords": [],
   "author": "",
