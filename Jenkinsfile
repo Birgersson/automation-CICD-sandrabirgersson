@@ -22,8 +22,8 @@ pipeline {
                     allowMissing: false, 
                     alwaysLinkToLastBuild: false, 
                     keepAll: false, 
-                    reportDir: 'backend-test/cypress/report/mochawesome-report', 
-                    reportFiles: 'mochawesome.html', 
+                    reportDir: 'backend-test/cypress/report', 
+                    reportFiles: 'output.html', 
                     reportName: 'Backend report', 
                     reportTitles: ''
                     ])
