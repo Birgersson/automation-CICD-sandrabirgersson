@@ -22,7 +22,7 @@ pipeline {
                     allowMissing: false, 
                     alwaysLinkToLastBuild: false, 
                     keepAll: false, 
-                    reportDir: 'backend-test/mochawesome-report', 
+                    reportDir: 'backend-test/cypress/report/mochawesome-report', 
                     reportFiles: 'mochawesome.html', 
                     reportName: 'Backend report', 
                     reportTitles: ''
